@@ -1,9 +1,7 @@
 /** product: calculate the product of an array of numbers. */
 
 function product(nums) {
-  if (nums.length === 1) {
-    return nums[0]
-  }
+  if (nums.length === 1) return nums[0];
   return nums[0] * product(nums.slice(1));
 }
 

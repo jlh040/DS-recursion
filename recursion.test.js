@@ -72,6 +72,8 @@ describe("revString", function() {
     expect(revString("duck")).toBe("kcud");
     expect(revString("cat")).toBe("tac");
     expect(revString("pony")).toBe("ynop");
+    expect(revString('I am here')).toBe('ereh ma I');
+    expect(revString('f')).toBe('f');
   });
 });
 
