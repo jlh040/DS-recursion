@@ -60,7 +60,22 @@ function revString(str) {
 /** gatherStrings: given an object, return an array of all of the string values. */
 
 function gatherStrings(obj) {
+  const stringsArr = [];
 
+  function searchForStrings(nestedObj, arr) {
+    for (let key in nestedObj) {
+      if (typeof nestedObj[key] === 'object') {
+        searchForStrings(nestedObj[key], arr)
+      }
+      else if (typeof nestedObj[key] === 'string') {
+        arr.push(nestedObj[key]);
+      }
+    }
+  };
+
+  searchForStrings(obj, stringsArr)
+
+  return stringsArr;
 }
 
 /** binarySearch: given a sorted array of numbers, and a value,
